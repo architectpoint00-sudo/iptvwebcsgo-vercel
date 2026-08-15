@@ -30,12 +30,12 @@ export default function PricingGrid({ detailed = false }: { detailed?: boolean }
 
           <div className="mt-5 flex items-baseline gap-1">
             <span className="text-4xl font-extrabold text-white">
-              R${plan.pricePerMonth}
+              R${plan.pricePerMonth.toFixed(2).replace('.', ',')}
             </span>
             <span className="text-sm text-gray-400">/mês</span>
           </div>
           <p className="mt-1 text-xs text-gray-500">
-            Total de R${plan.totalPrice} cobrado uma única vez
+            Total de R${plan.totalPrice.toFixed(2).replace('.', ',')} cobrado uma única vez
           </p>
 
           <ul className="mt-6 flex flex-1 flex-col gap-3">

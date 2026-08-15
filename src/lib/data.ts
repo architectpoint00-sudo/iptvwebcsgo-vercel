@@ -131,45 +131,45 @@ export const PRICING_PLANS: PricingPlan[] = [
   {
     id: '1-mes',
     name: '1 Mês',
-    pricePerMonth: 45,
-    totalPrice: 45,
+    pricePerMonth: 22.5,
+    totalPrice: 22.5,
     tagline: 'Ideal para experimentar o serviço completo por um mês.',
     features: PLAN_FEATURES,
-    whatsappMessage: 'Olá! Quero contratar o plano de 1 Mês por R$45,00.',
+    whatsappMessage: 'Olá! Quero contratar o plano de 1 Mês por R$22,50.',
   },
   {
     id: '3-meses',
     name: '3 Meses',
-    pricePerMonth: 35,
-    totalPrice: 105,
+    pricePerMonth: 17.5,
+    totalPrice: 52.5,
     badge: 'Economize 22%',
     tagline: 'Ótimo equilíbrio entre economia e flexibilidade.',
     features: PLAN_FEATURES,
     whatsappMessage:
-      'Olá! Quero contratar o plano de 3 Meses por R$35,00/mês (R$105,00 no total).',
+      'Olá! Quero contratar o plano de 3 Meses por R$17,50/mês (R$52,50 no total).',
   },
   {
     id: '6-meses',
     name: '6 Meses',
-    pricePerMonth: 25,
-    totalPrice: 150,
+    pricePerMonth: 12.5,
+    totalPrice: 75,
     badge: 'Mais Popular',
     popular: true,
     tagline: 'A escolha da maioria dos nossos clientes.',
     features: PLAN_FEATURES,
     whatsappMessage:
-      'Olá! Quero contratar o plano de 6 Meses por R$25,00/mês (R$150,00 no total).',
+      'Olá! Quero contratar o plano de 6 Meses por R$12,50/mês (R$75,00 no total).',
   },
   {
     id: '12-meses',
     name: '12 Meses',
-    pricePerMonth: 20,
-    totalPrice: 240,
+    pricePerMonth: 10,
+    totalPrice: 120,
     badge: 'Melhor Custo-Benefício',
     tagline: 'O menor preço por mês para quem não quer se preocupar depois.',
     features: PLAN_FEATURES,
     whatsappMessage:
-      'Olá! Quero contratar o plano de 12 Meses por R$20,00/mês (R$240,00 no total).',
+      'Olá! Quero contratar o plano de 12 Meses por R$10,00/mês (R$120,00 no total).',
   },
 ]
 
@@ -362,7 +362,7 @@ export const ABOUT_WHY_CARDS: WhyItem[] = [
     icon: '💰',
     title: 'Preços',
     description:
-      'Planos acessíveis para todos os bolsos, com opções a partir de R$20 por mês e garantia de devolução do dinheiro em 7 dias.',
+      'Planos acessíveis para todos os bolsos, com opções a partir de R$10 por mês e garantia de devolução do dinheiro em 7 dias.',
   },
 ]
 
