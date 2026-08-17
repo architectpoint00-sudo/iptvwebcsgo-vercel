@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
@@ -24,20 +25,23 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description:
-    "Melhor IPTV do Brasil com +150.000 canais ao vivo, filmes e séries. Qualidade 4K, sem travamentos. Teste grátis 24h. Planos a partir de R$24,99/mês.",
+    "Melhor IPTV do Brasil com +150.000 canais ao vivo, filmes e séries. Qualidade 4K, sem travamentos. Teste grátis 24h. Planos a partir de R$24,99/mes.",
   applicationName: SITE_NAME,
   keywords: [
     "IPTV Brasil",
-    "IPTV WebCSGO",
-    "assinatura IPTV",
-    "canais de TV online",
+    "IPTV",
+    "canais ao vivo",
+    "filmes online",
+    "séries online",
+    "TV por internet",
     "IPTV 4K",
-    "teste grátis IPTV",
+    "melhor IPTV",
+    "lista IPTV",
+    "WebCSGO IPTV",
   ],
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    siteName: SITE_NAME,
     url: SITE_URL,
     title: "IPTV Brasil | +150.000 Canais HD, Full HD e 4K | WebCSGO IPTV",
     description:
@@ -74,6 +78,18 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-[#0a0a0a] text-gray-100">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-Z0RWXPWSLX"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-Z0RWXPWSLX');
+          `}
+        </Script>
         <AnnouncementBar />
         <Header />
         <main className="flex-1">{children}</main>
