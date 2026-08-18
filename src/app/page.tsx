@@ -36,9 +36,9 @@ export default function HomePage() {
           </span>
 
           <h1 className="mt-6 text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">
-            Experiência IPTV Sem Interrupções, com{' '}
+            Cada Jogo. Cada Canal.{' '}
             <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-              150.000+ Canais
+              Zero Travamento.
             </span>
           </h1>
 
