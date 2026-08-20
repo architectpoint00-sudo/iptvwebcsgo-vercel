@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+zimport type { Metadata } from "next";
 import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -93,7 +93,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           "@type": "Product",
           "name": "WebCSGO IPTV - Assinatura Premium",
           "description": "Servi\u00e7o de IPTV premium com +150.000 canais em HD, Full HD e 4K. Tecnologia anti-freeze, suporte 24/7.",
-          "brand": {"@type": "Brand", "name": "WebCSGO IPTV"},
+          "brand":{"@type":"Brand","name":"WebCSGO IPTV"},"image":`${SITE_URL}/og-image-webcsgo.png`,
           "offers": {
             "@type": "AggregateOffer",
             "priceCurrency": "BRL",
