@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { whatsappLink } from '@/lib/constants'
 
 export default function CtaSection({
@@ -26,6 +27,20 @@ export default function CtaSection({
           >
             {buttonLabel}
           </a>
+        </div>
+      <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <Link href="/precos/" className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-center text-sm text-gray-300 transition hover:border-emerald-500/30 hover:text-white">
+            Planos e Precos
+          </Link>
+          <Link href="/canais/" className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-center text-sm text-gray-300 transition hover:border-emerald-500/30 hover:text-white">
+            Lista de Canais
+          </Link>
+          <Link href="/teste-gratis/" className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-center text-sm text-gray-300 transition hover:border-emerald-500/30 hover:text-white">
+            Teste Gratis
+          </Link>
+          <Link href="/faq/" className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-center text-sm text-gray-300 transition hover:border-emerald-500/30 hover:text-white">
+            Perguntas Frequentes
+          </Link>
         </div>
       </div>
     </section>
