@@ -82,6 +82,37 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
           <script
             type="application/ld+json"
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "WebCSGO IPTV - Assinatura Premium",
+            "description": "Serviço de IPTV premium com +150.000 canais em HD, Full HD e 4K. Tecnologia anti-freeze, suporte 24/7.",
+            "brand": {"@type": "Brand", "name": "WebCSGO IPTV"},
+            "offers": {
+              "@type": "AggregateOffer",
+              "priceCurrency": "BRL",
+              "lowPrice": "12.50",
+              "highPrice": "75.00",
+              "offerCount": "4",
+              "availability": "https://schema.org/InStock"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.8",
+              "reviewCount": "2847"
+            }
+          })}} />
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {"@type": "Question", "name": "O que \u00e9 IPTV?", "acceptedAnswer": {"@type": "Answer", "text": "IPTV (Internet Protocol Television) \u00e9 uma tecnologia que permite assistir a canais de TV, filmes e s\u00e9ries atrav\u00e9s da internet, sem necessidade de antena ou TV a cabo tradicional."}},
+              {"@type": "Question", "name": "Em quais dispositivos posso usar?", "acceptedAnswer": {"@type": "Answer", "text": "Nossa IPTV funciona em Smart TVs, Android, iOS, Fire Stick, MAG Box, computadores, notebooks e tablets. Basta ter uma conex\u00e3o de internet est\u00e1vel."}},
+              {"@type": "Question", "name": "Como funciona o teste gr\u00e1tis?", "acceptedAnswer": {"@type": "Answer", "text": "Oferecemos um teste gr\u00e1tis de 6 horas para voc\u00ea experimentar a qualidade do nosso servi\u00e7o antes de assinar um plano, sem compromisso."}},
+              {"@type": "Question", "name": "Como fa\u00e7o a instala\u00e7\u00e3o?", "acceptedAnswer": {"@type": "Answer", "text": "A instala\u00e7\u00e3o \u00e9 simples e leva poucos minutos. Enviamos um passo a passo completo e nossa equipe de suporte ajuda em todo o processo pelo WhatsApp."}},
+              {"@type": "Question", "name": "O servi\u00e7o \u00e9 est\u00e1vel, sem travamentos?", "acceptedAnswer": {"@type": "Answer", "text": "Sim! Utilizamos tecnologia anti-freeze e servidores de alta performance para garantir uma transmiss\u00e3o est\u00e1vel 24 horas por dia, 7 dias por semana."}}
+            ]
+          })}} />
             dangerouslySetInnerHTML={{
               __html: JSON.stringify({
                 "@context": "https://schema.org",
