@@ -34,7 +34,7 @@ export const HOME_FEATURES: FeatureItem[] = [
       'Equipe de suporte técnico disponível 24 horas por dia, 7 dias por semana, diretamente pelo WhatsApp.',
   },
 ]
-TEST
+
 
 /* ------------------------------------------------------------------ */
 /*  Blog posts                                                         */
