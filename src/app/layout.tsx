@@ -20,6 +20,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  verification: {
+    google: "TN4bplf7oXkIk1h9SGezxu4XJ6c-y2tNOjSPXutGAiI",
+  },
   title: {
     default: "IPTV Brasil | +150.000 Canais HD, Full HD e 4K | WebCSGO IPTV",
     template: `%s | ${SITE_NAME}`,
