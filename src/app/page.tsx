@@ -3,7 +3,6 @@ import { buildMetadata } from '@/lib/seo'
 import { WHATSAPP_TRIAL, SITE_URL } from '@/lib/constants'
 import {
   HOME_FEATURES,
-  TESTIMONIALS,
   HOME_STATS,
   CATEGORY_TAGS,
   WHY_CHOOSE_US,
@@ -126,42 +125,6 @@ export default function HomePage() {
               <p className="mt-2 text-sm leading-relaxed text-gray-400">
                 {feature.description}
               </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-            O Que Nossos Clientes Dizem
-          </h2>
-          <p className="mt-3 text-gray-400">
-            Milhares de brasileiros já confiam na IPTV WebCSGO todos os dias.
-          </p>
-        </div>
-
-        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
-          {TESTIMONIALS.map((testimonial) => (
-            <div
-              key={testimonial.name}
-              className="flex flex-col rounded-2xl border border-white/10 bg-[#111827] p-6"
-            >
-              <div className="flex gap-1 text-yellow-400">
-                {Array.from({ length: testimonial.rating }).map((_, i) => (
-                  <svg key={i} viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4">
-                    <path d="M10 1.5l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.6-4.1 6.1-.6L10 1.5Z" />
-                  </svg>
-                ))}
-              </div>
-              <p className="mt-4 flex-1 text-sm leading-relaxed text-gray-300">
-                &ldquo;{testimonial.quote}&rdquo;
-              </p>
-              <div className="mt-6 border-t border-white/10 pt-4">
-                <p className="text-sm font-semibold text-white">{testimonial.name}</p>
-                <p className="text-xs text-gray-500">{testimonial.location}</p>
-              </div>
             </div>
           ))}
         </div>

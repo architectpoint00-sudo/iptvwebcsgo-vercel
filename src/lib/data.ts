@@ -35,38 +35,6 @@ export const HOME_FEATURES: FeatureItem[] = [
   },
 ]
 
-
-export interface Testimonial {
-  name: string
-  location: string
-  rating: number
-  quote: string
-}
-
-export const TESTIMONIALS: Testimonial[] = [
-  {
-    name: 'Carlos Silva',
-    location: 'São Paulo, SP',
-    rating: 5,
-    quote:
-      'Uso a IPTV WebCSGO há mais de 1 ano e nunca tive problema de travamento. A qualidade em 4K é impressionante e o suporte responde em minutos!',
-  },
-  {
-    name: 'Ana Oliveira',
-    location: 'Rio de Janeiro, RJ',
-    rating: 5,
-    quote:
-      'Testei vários serviços de IPTV antes de encontrar a WebCSGO. É de longe o melhor custo-benefício, com canais que realmente funcionam e não travam.',
-  },
-  {
-    name: 'Roberto Santos',
-    location: 'Belo Horizonte, BH',
-    rating: 5,
-    quote:
-      'Minha família toda usa: eu assisto aos jogos, minha esposa às novelas, e meus filhos aos canais infantis. Tudo funciona perfeitamente em vários dispositivos ao mesmo tempo.',
-  },
-]
-
 /* ------------------------------------------------------------------ */
 /*  Stats bars (reused on Home / Sobre / Canais)                       */
 /* ------------------------------------------------------------------ */
