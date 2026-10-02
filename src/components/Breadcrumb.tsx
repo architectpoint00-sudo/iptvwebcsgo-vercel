@@ -1,32 +1,54 @@
 import Link from 'next/link'
+import { SITE_URL } from '@/lib/constants'
 
 export interface BreadcrumbItem {
   label: string
   href?: string
 }
 
+function buildBreadcrumbSchema(items: BreadcrumbItem[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.label,
+      ...(item.href
+        ? { "item": item.href.startsWith('http') ? item.href : `${SITE_URL}${item.href}` }
+        : {}),
+    })),
+  }
+}
+
 export default function Breadcrumb({ items }: { items: BreadcrumbItem[] }) {
   return (
-    <nav aria-label="breadcrumb" className="mb-8 text-sm text-gray-500">
-      <ol className="flex flex-wrap items-center gap-2">
-        {items.map((item, index) => {
-          const isLast = index === items.length - 1
-          return (
-            <li key={item.label} className="flex items-center gap-2">
-              {index > 0 && <span aria-hidden="true">/</span>}
-              {item.href && !isLast ? (
-                <Link href={item.href} className="transition-colors hover:text-white">
-                  {item.label}
-                </Link>
-              ) : (
-                <span className={isLast ? 'text-gray-300' : ''} aria-current={isLast ? 'page' : undefined}>
-                  {item.label}
-                </span>
-              )}
-            </li>
-          )
-        })}
-      </ol>
-    </nav>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumbSchema(items)) }}
+      />
+      <nav aria-label="breadcrumb" className="mb-8 text-sm text-gray-500">
+        <ol className="flex flex-wrap items-center gap-2">
+          {items.map((item, index) => {
+            const isLast = index === items.length - 1
+            return (
+              <li key={item.label} className="flex items-center gap-2">
+                {index > 0 && <span aria-hidden="true">/</span>}
+                {item.href && !isLast ? (
+                  <Link href={item.href} className="transition-colors hover:text-white">
+                    {item.label}
+                  </Link>
+                ) : (
+                  <span className={isLast ? 'text-gray-300' : ''} aria-current={isLast ? 'page' : undefined}>
+                    {item.label}
+                  </span>
+                )}
+              </li>
+            )
+          })}
+        </ol>
+      </nav>
+    </>
   )
 }

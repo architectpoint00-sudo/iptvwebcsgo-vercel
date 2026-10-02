@@ -6,6 +6,7 @@ const PAGES_LINKS = [
   { href: '/precos/', label: 'Preços' },
   { href: '/canais/', label: 'Canais' },
   { href: '/sobre/', label: 'Sobre Nós' },
+  { href: '/blog/', label: 'Blog' },
 ]
 
 const SUPPORT_LINKS = [

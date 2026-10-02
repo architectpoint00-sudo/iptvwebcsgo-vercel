@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { href: '/#pricing', label: 'Preços' },
   { href: '/canais/', label: 'Canais' },
   { href: '/sobre/', label: 'Sobre Nós' },
+  { href: '/blog/', label: 'Blog' },
   { href: '/#faq', label: 'FAQ' },
   { href: '/contato/', label: 'Contato' },
 ]

@@ -1,13 +1,14 @@
 import { buildMetadata } from '@/lib/seo'
 import { PRICING_PLANS } from '@/lib/data'
+import { SITE_URL } from '@/lib/constants'
 import Breadcrumb from '@/components/Breadcrumb'
 import PricingGrid from '@/components/PricingGrid'
 import CtaSection from '@/components/CtaSection'
 
 export const metadata = buildMetadata({
-  title: 'Planos IPTV Brasil | Preços a Partir de R$24,99 | WebCSGO',
+  title: 'Planos IPTV Brasil | Preços a Partir de R$10/mês | WebCSGO',
   description:
-    'Confira os planos IPTV WebCSGO: 1, 3, 6 ou 12 meses, com preços a partir de R$20/mês. Pagamento via PIX, cartão ou boleto. Garantia de 7 dias.',
+    'Confira os planos IPTV WebCSGO: 1, 3, 6 ou 12 meses, com preços a partir de R$10/mês. Pagamento via PIX, cartão ou boleto. Garantia de 7 dias.',
   path: '/precos/',
 })
 
@@ -29,9 +30,30 @@ const PAYMENT_METHODS = [
   },
 ]
 
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "WebCSGO IPTV - Assinatura Premium",
+  "description": "Serviço de IPTV premium com +150.000 canais em HD, Full HD e 4K. Tecnologia anti-freeze, suporte 24/7.",
+  "brand": { "@type": "Brand", "name": "WebCSGO IPTV" },
+  "image": `${SITE_URL}/og-image-webcsgo.png`,
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "BRL",
+    "lowPrice": "22.50",
+    "highPrice": "120.00",
+    "offerCount": "4",
+    "availability": "https://schema.org/InStock"
+  }
+}
+
 export default function PrecosPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
       <section className="mx-auto max-w-7xl px-4 pt-10 sm:px-6 lg:px-8">
         <Breadcrumb items={[{ label: 'Início', href: '/' }, { label: 'Preços' }]} />
 

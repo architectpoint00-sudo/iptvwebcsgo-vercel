@@ -1,5 +1,5 @@
 const MESSAGE =
-  '🔥 Plano de 24 Meses com 53% de Desconto — Melhor Preço ✓ Servidor de Teste Grátis 24h'
+  '🔥 Plano de 12 Meses por R$10/mês — Melhor Preço ✓ Teste Grátis de 6 Horas'
 
 export default function AnnouncementBar() {
   const items = Array.from({ length: 4 })

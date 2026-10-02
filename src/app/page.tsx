@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { buildMetadata } from '@/lib/seo'
-import { WHATSAPP_TRIAL } from '@/lib/constants'
+import { WHATSAPP_TRIAL, SITE_URL } from '@/lib/constants'
 import {
   HOME_FEATURES,
   TESTIMONIALS,
@@ -18,13 +18,34 @@ import CtaSection from '@/components/CtaSection'
 export const metadata = buildMetadata({
   title: 'IPTV Brasil | +150.000 Canais HD, Full HD e 4K | WebCSGO IPTV',
   description:
-    'Melhor IPTV do Brasil com +150.000 canais ao vivo, filmes e séries. Qualidade 4K, sem travamentos. Teste grátis 24h. Planos a partir de R$24,99/mês.',
+    'Melhor IPTV do Brasil com +150.000 canais ao vivo, filmes e séries. Qualidade 4K, sem travamentos. Teste grátis de 6 horas. Planos a partir de R$10/mês.',
   path: '/',
 })
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "WebCSGO IPTV - Assinatura Premium",
+  "description": "Serviço de IPTV premium com +150.000 canais em HD, Full HD e 4K. Tecnologia anti-freeze, suporte 24/7.",
+  "brand": { "@type": "Brand", "name": "WebCSGO IPTV" },
+  "image": `${SITE_URL}/og-image-webcsgo.png`,
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "BRL",
+    "lowPrice": "22.50",
+    "highPrice": "120.00",
+    "offerCount": "4",
+    "availability": "https://schema.org/InStock"
+  }
+}
 
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="pointer-events-none absolute -top-40 left-1/2 h-[32rem] w-[32rem] -translate-x-1/2 rounded-full bg-blue-600/20 blur-3xl" />
