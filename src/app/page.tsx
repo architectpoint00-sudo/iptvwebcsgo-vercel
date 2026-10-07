@@ -15,17 +15,17 @@ import FaqAccordion from '@/components/FaqAccordion'
 import CtaSection from '@/components/CtaSection'
 
 export const metadata = buildMetadata({
-  title: 'IPTV Brasil | +150.000 Canais HD, Full HD e 4K | WebCSGO IPTV',
+  title: 'IPTV Brasil: Teste Grátis de 6 Horas e Planos | WebCSGO IPTV',
   description:
-    'Melhor IPTV do Brasil com +150.000 canais ao vivo, filmes e séries. Qualidade 4K, sem travamentos. Teste grátis de 6 horas. Planos a partir de R$10/mês.',
+    'IPTV com canais ao vivo, filmes e séries em HD e 4K. Peça o teste grátis de 6 horas e veja os planos a partir de R$10/mês, com guias de instalação.',
   path: '/',
 })
 
 const productSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
-  "name": "WebCSGO IPTV - Assinatura Premium",
-  "description": "Serviço de IPTV premium com +150.000 canais em HD, Full HD e 4K. Tecnologia anti-freeze, suporte 24/7.",
+  "name": "WebCSGO IPTV - Assinatura",
+  "description": "Assinatura de IPTV com canais ao vivo, filmes e séries sob demanda em HD, Full HD e 4K, nos planos de 1, 3, 6 e 12 meses.",
   "brand": { "@type": "Brand", "name": "WebCSGO IPTV" },
   "image": `${SITE_URL}/og-image-webcsgo.png`,
   "offers": {
@@ -38,12 +38,35 @@ const productSchema = {
   }
 }
 
+const GUIDE_LINKS = [
+  { href: '/blog/como-instalar-iptv-fire-stick-2026/', title: 'IPTV no Fire Stick', text: 'Do Downloader ao login, com solução para os erros mais comuns.' },
+  { href: '/blog/melhor-iptv-smart-tv-samsung-lg/', title: 'IPTV na Smart TV Samsung e LG', text: 'Como achar um player na loja da TV e configurar o acesso.' },
+  { href: '/blog/configurar-iptv-android-ios-2026/', title: 'IPTV no Android e iOS', text: 'Configuração no celular e no tablet, com Xtream Codes ou M3U.' },
+  { href: '/blog/como-resolver-buffering-iptv/', title: 'IPTV travando: o que fazer', text: 'Diagnóstico por sintoma: rede, Wi-Fi, DNS, app e servidor.' },
+  { href: '/blog/iptv-futebol-ao-vivo/', title: 'IPTV para jogos de futebol', text: 'Como se preparar para o dia de jogo e reduzir travadas.' },
+  { href: '/blog/melhores-listas-iptv-brasil-2026/', title: 'Como escolher um provedor IPTV', text: '10 critérios e um checklist para usar antes de pagar.' },
+]
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": FAQ_HOME.map((item) => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": { "@type": "Answer", "text": item.answer },
+  })),
+}
+
 export default function HomePage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       {/* Hero */}
       <section className="relative overflow-hidden">
@@ -52,19 +75,22 @@ export default function HomePage() {
 
         <div className="relative mx-auto max-w-5xl px-4 pb-20 pt-16 text-center sm:px-6 sm:pt-24 lg:px-8">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-blue-300 sm:text-sm">
-            O Provedor de IPTV Mais Confiável do Brasil
+            IPTV para o Brasil · Teste Grátis de 6 Horas
           </span>
 
           <h1 className="mt-6 text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">
-            Cada Jogo. Cada Canal.{' '}
+            IPTV Brasil:{' '}
             <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-              Zero Travamento.
+              Canais ao Vivo, Filmes e Séries
             </span>
           </h1>
 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-gray-300 sm:text-lg">
-            Tecnologia Anti-Freeze, qualidade 4K Ultra HD e suporte técnico 24/7.
-            Streaming perfeito em todos os seus dispositivos. Teste grátis agora.
+            Assista em Smart TV, Fire Stick, celular ou computador, em HD, Full HD e 4K
+            quando o canal e a sua internet permitirem. Peça o teste grátis de 6 horas
+            pelo WhatsApp e confira antes de assinar. Precisa de ajuda para instalar?
+            Veja o{' '}
+            <Link href="/guia-de-instalacao/" className="text-blue-300 underline underline-offset-2 hover:text-blue-200">guia de instalação</Link>.
           </p>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -86,31 +112,29 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══════ CHANNEL GRID ═══════ */}
-      <div style={{maxWidth:'1240px',margin:'0 auto',padding:'40px 24px 0'}}>
-        <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(200px,1fr))',gap:'16px'}}>
-          <div style={{background:'rgba(30,41,59,.7)',borderRadius:'12px',overflow:'hidden',border:'1px solid rgba(255,255,255,.06)'}}>
-            <div style={{background:'linear-gradient(135deg,#1e3a5f,#0f172a)',padding:'24px 16px 16px',position:'relative'}}><span style={{position:'absolute',top:'8px',left:'8px',background:'#ef4444',color:'#fff',fontSize:'10px',fontWeight:700,padding:'2px 8px',borderRadius:'4px'}}>AO VIVO</span><div style={{textAlign:'center',fontSize:'28px'}}>⚽</div></div>
-            <div style={{padding:'10px 12px'}}><div style={{color:'#e2e8f0',fontSize:'13px',fontWeight:600}}>Globo Esporte</div><div style={{color:'#64748b',fontSize:'11px'}}>Brasileirao Ao Vivo</div><div style={{marginTop:'6px',height:'3px',background:'#334155',borderRadius:'2px'}}><div style={{width:'65%',height:'100%',background:'#ef4444',borderRadius:'2px'}}></div></div></div>
-          </div>
-          <div style={{background:'rgba(30,41,59,.7)',borderRadius:'12px',overflow:'hidden',border:'1px solid rgba(255,255,255,.06)'}}>
-            <div style={{background:'linear-gradient(135deg,#2d1a3e,#0f172a)',padding:'24px 16px 16px',position:'relative'}}><span style={{position:'absolute',top:'8px',left:'8px',background:'#ef4444',color:'#fff',fontSize:'10px',fontWeight:700,padding:'2px 8px',borderRadius:'4px'}}>AO VIVO</span><div style={{textAlign:'center',fontSize:'28px'}}>🏎️</div></div>
-            <div style={{padding:'10px 12px'}}><div style={{color:'#e2e8f0',fontSize:'13px',fontWeight:600}}>ESPN Brasil</div><div style={{color:'#64748b',fontSize:'11px'}}>Formula 1 GP</div><div style={{marginTop:'6px',height:'3px',background:'#334155',borderRadius:'2px'}}><div style={{width:'40%',height:'100%',background:'#a855f7',borderRadius:'2px'}}></div></div></div>
-          </div>
-          <div style={{background:'rgba(30,41,59,.7)',borderRadius:'12px',overflow:'hidden',border:'1px solid rgba(255,255,255,.06)'}}>
-            <div style={{background:'linear-gradient(135deg,#3b1a1a,#0f172a)',padding:'24px 16px 16px',position:'relative'}}><span style={{position:'absolute',top:'8px',left:'8px',background:'#ef4444',color:'#fff',fontSize:'10px',fontWeight:700,padding:'2px 8px',borderRadius:'4px'}}>AO VIVO</span><div style={{textAlign:'center',fontSize:'28px'}}>🏀</div></div>
-            <div style={{padding:'10px 12px'}}><div style={{color:'#e2e8f0',fontSize:'13px',fontWeight:600}}>NBA TV</div><div style={{color:'#64748b',fontSize:'11px'}}>Lakers vs Celtics</div><div style={{marginTop:'6px',height:'3px',background:'#334155',borderRadius:'2px'}}><div style={{width:'80%',height:'100%',background:'#f97316',borderRadius:'2px'}}></div></div></div>
-          </div>
-          <div style={{background:'rgba(30,41,59,.7)',borderRadius:'12px',overflow:'hidden',border:'1px solid rgba(255,255,255,.06)'}}>
-            <div style={{background:'linear-gradient(135deg,#1a1a2e,#0f172a)',padding:'24px 16px 16px',position:'relative'}}><span style={{position:'absolute',top:'8px',left:'8px',background:'linear-gradient(90deg,#3b82f6,#8b5cf6)',color:'#fff',fontSize:'10px',fontWeight:700,padding:'2px 8px',borderRadius:'4px'}}>4K HDR</span><div style={{textAlign:'center',fontSize:'28px'}}>🎬</div></div>
-            <div style={{padding:'10px 12px'}}><div style={{color:'#e2e8f0',fontSize:'13px',fontWeight:600}}>Netflix Originals</div><div style={{color:'#64748b',fontSize:'11px'}}>200.000+ VOD</div><div style={{marginTop:'6px',height:'3px',background:'#334155',borderRadius:'2px'}}><div style={{width:'100%',height:'100%',background:'linear-gradient(90deg,#3b82f6,#8b5cf6)',borderRadius:'2px'}}></div></div></div>
-          </div>
-          <div style={{background:'rgba(30,41,59,.7)',borderRadius:'12px',overflow:'hidden',border:'1px solid rgba(255,255,255,.06)'}}>
-            <div style={{background:'linear-gradient(135deg,#0c1e3f,#0f172a)',padding:'24px 16px 16px',position:'relative'}}><span style={{position:'absolute',top:'8px',left:'8px',background:'#e11d48',color:'#fff',fontSize:'10px',fontWeight:700,padding:'2px 8px',borderRadius:'4px'}}>4K</span><div style={{textAlign:'center',fontSize:'28px'}}>🎥</div></div>
-            <div style={{padding:'10px 12px'}}><div style={{color:'#e2e8f0',fontSize:'13px',fontWeight:600}}>HBO Max</div><div style={{color:'#64748b',fontSize:'11px'}}>Filmes & Series</div><div style={{marginTop:'6px',height:'3px',background:'#334155',borderRadius:'2px'}}><div style={{width:'90%',height:'100%',background:'#22c55e',borderRadius:'2px'}}></div></div></div>
-          </div>
+      {/* Guides */}
+      <section className="mx-auto max-w-7xl px-4 pb-16 pt-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
+            Guias Para Instalar e Resolver Problemas
+          </h2>
+          <p className="mt-3 text-gray-400">
+            Passo a passo por aparelho, escritos para quem vai configurar a própria IPTV.
+          </p>
         </div>
-      </div>
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {GUIDE_LINKS.map((guide) => (
+            <Link
+              key={guide.href}
+              href={guide.href}
+              className="rounded-2xl border border-white/10 bg-[#111827] p-5 transition-colors hover:border-blue-500/40"
+            >
+              <h3 className="text-base font-bold text-white">{guide.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-gray-400">{guide.text}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
 
       {/* Features */}
       <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
@@ -183,7 +207,7 @@ export default function HomePage() {
               Por Que Escolher a IPTV WebCSGO
             </h2>
             <p className="mt-3 text-gray-400">
-              Tudo que você precisa para uma experiência de streaming perfeita.
+              O que você encontra ao assinar e como começar.
             </p>
           </div>
           <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -233,8 +257,8 @@ export default function HomePage() {
               7 Dias de Garantia de Devolução
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-gray-400">
-              Se você não ficar satisfeito, devolvemos o seu dinheiro em até 7 dias
-              corridos após a compra. Sem burocracia.
+              Se o serviço não atender, você pode pedir a devolução em até 7 dias
+              corridos após a compra, conforme a política de reembolso.
             </p>
           </div>
         </div>

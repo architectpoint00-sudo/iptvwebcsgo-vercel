@@ -1,5 +1,5 @@
 const MESSAGE =
-  '🔥 Plano de 12 Meses por R$10/mês — Melhor Preço ✓ Teste Grátis de 6 Horas'
+  'Plano de 12 meses a R$10/mês (R$120 no total) | Teste grátis de 6 horas'
 
 export default function AnnouncementBar() {
   const items = Array.from({ length: 4 })

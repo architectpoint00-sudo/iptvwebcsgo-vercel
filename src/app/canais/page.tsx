@@ -11,9 +11,9 @@ import StatsBar from '@/components/StatsBar'
 import CtaSection from '@/components/CtaSection'
 
 export const metadata = buildMetadata({
-  title: 'Lista de Canais IPTV | +150.000 Canais ao Vivo | WebCSGO',
+  title: 'Lista de Canais IPTV por Categoria: Esportes, Filmes e Mais',
   description:
-    'Veja a lista completa de canais IPTV WebCSGO: esportes, cinema, séries, infantil, notícias, documentários, música e canais internacionais. Mais de 150.000 opções.',
+    'Veja as categorias de canais IPTV da WebCSGO: esportes, cinema, séries, infantil, notícias, documentários, música e internacionais. Confirme no teste grátis.',
   path: '/canais/',
 })
 
@@ -28,11 +28,14 @@ export default function CanaisPage() {
             Lista Completa de Canais IPTV
           </h1>
           <p className="mt-5 text-base leading-relaxed text-gray-300 sm:text-lg">
-            Conheça o catálogo da IPTV WebCSGO: mais de 150.000 canais e conteúdos entre
-            TV ao vivo, filmes e séries em VOD. Esportes, cinema, notícias, infantil,
-            documentários, música e uma grade internacional gigante, tudo em qualidade
-            HD, Full HD e 4K Ultra HD, com tecnologia anti-freeze para você assistir
-            sem travamentos.
+            Conheça as categorias de canais e conteúdos da IPTV WebCSGO: TV ao vivo,
+            filmes e séries em VOD, com esportes, cinema, notícias, infantil,
+            documentários, música e canais internacionais, em HD, Full HD e 4K quando
+            disponível. A grade pode mudar com o tempo; para conferir os canais no seu
+            aparelho, peça o{' '}
+            <Link href="/teste-gratis/" className="text-blue-400 hover:text-blue-300">teste grátis de 6 horas</Link>.
+            Para saber como a qualidade é medida, leia o guia de{' '}
+            <Link href="/blog/guia-canais-iptv-hd-4k/" className="text-blue-400 hover:text-blue-300">canais em HD e 4K</Link>.
           </p>
         </div>
       </section>
@@ -48,9 +51,11 @@ export default function CanaisPage() {
             >
               <div className="flex items-center justify-between">
                 <span className="text-3xl">{category.icon}</span>
-                <span className="rounded-full bg-blue-500/10 px-3 py-1 text-xs font-bold text-blue-300">
-                  {category.count}
-                </span>
+                {category.count && (
+                  <span className="rounded-full bg-blue-500/10 px-3 py-1 text-xs font-bold text-blue-300">
+                    {category.count}
+                  </span>
+                )}
               </div>
               <h2 className="mt-4 text-lg font-bold text-white">{category.name}</h2>
               <p className="mt-2 text-sm leading-relaxed text-gray-400">
@@ -79,7 +84,7 @@ export default function CanaisPage() {
               Catálogo Completo por Categoria
             </h2>
             <p className="mt-3 text-gray-400">
-              Confira todos os canais e conteúdos disponíveis em cada categoria.
+              Exemplos de canais e conteúdos por categoria. A lista pode variar; confirme no teste grátis.
             </p>
           </div>
 

@@ -61,7 +61,7 @@ const SECTIONS = [
   {
     title: '8. Isenção de Garantias',
     paragraphs: [
-      'Empregamos os melhores esforços para manter o serviço estável e disponível 24 horas por dia, utilizando servidores redundantes e tecnologia anti-freeze. No entanto, o serviço é fornecido "como está", e não garantimos que estará livre de interrupções eventuais causadas por fatores fora do nosso controle, como instabilidades de internet do usuário ou de terceiros.',
+      'Empregamos os melhores esforços para manter o serviço estável e disponível. No entanto, o serviço é fornecido "como está", e não garantimos que estará livre de interrupções eventuais causadas por fatores fora do nosso controle, como instabilidades de internet do usuário ou de terceiros.',
     ],
   },
   {

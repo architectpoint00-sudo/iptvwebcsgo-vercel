@@ -1,12 +1,13 @@
 import Link from 'next/link'
 import { buildMetadata } from '@/lib/seo'
 import { BLOG_POSTS } from '@/lib/data'
+import { brDateToISO } from '@/lib/dates'
 import Breadcrumb from '@/components/Breadcrumb'
 
 export const metadata = buildMetadata({
   title: 'Blog IPTV WebCSGO: Guias, Dicas e Tutoriais de IPTV no Brasil',
   description:
-    'Blog IPTV WebCSGO: guias de instalação, dicas de configuração, comparações de serviços e tudo sobre IPTV no Brasil em 2026.',
+    'Guias de instalação de IPTV por aparelho, soluções para buffering, critérios para escolher um provedor e comparações com TV a cabo e streaming.',
   path: '/blog/',
 })
 
@@ -27,7 +28,7 @@ export default function BlogPage() {
           <li key={post.slug}>
             <article className="rounded-2xl border border-white/10 bg-[#111827] p-6 transition-colors hover:border-white/20 sm:p-8">
               <div className="flex flex-wrap items-center gap-3 text-xs text-gray-500">
-                <time dateTime={post.date}>{post.date}</time>
+                <time dateTime={brDateToISO(post.date)}>{post.date}</time>
                 <span aria-hidden="true">&middot;</span>
                 <span>{post.readTime}</span>
               </div>

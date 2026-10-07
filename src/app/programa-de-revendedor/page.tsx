@@ -7,7 +7,7 @@ import CtaSection from '@/components/CtaSection'
 export const metadata = buildMetadata({
   title: 'Programa de Revendedor - IPTV WEBCSGO',
   description:
-    'Ganhe dinheiro revendendo o melhor serviço de IPTV do Brasil. Preços exclusivos, painel de revendedor e suporte prioritário para você começar seu próprio negócio.',
+    'Programa de revenda IPTV WebCSGO: créditos com preço de atacado, painel de revendedor e atendimento pelo WhatsApp. Saiba como funciona e como começar.',
   path: '/programa-de-revendedor/',
 })
 
@@ -24,9 +24,7 @@ export default function ProgramaDeRevendedorPage() {
             Programa de Revendedor
           </h1>
           <p className="mt-5 text-base leading-relaxed text-gray-300 sm:text-lg">
-            Transforme sua paixão por tecnologia em uma fonte de renda extra. Torne-se
-            um revendedor autorizado da IPTV WebCSGO e tenha acesso a preços
-            exclusivos de atacado.
+            Quer revender IPTV para os seus próprios clientes? No programa de revendedor você compra créditos com preço de atacado, usa um painel para gerenciar acessos e fala com a equipe pelo WhatsApp. Os valores dependem do volume combinado.
           </p>
         </div>
       </section>

@@ -36,8 +36,8 @@ export default function Footer() {
               </span>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-gray-400">
-              Provedor de IPTV para o Brasil, com mais de 150.000 canais,
-              qualidade 4K e suporte 24 horas por dia via WhatsApp.
+              Serviço de IPTV para o Brasil com canais ao vivo, filmes e séries
+              sob demanda, teste grátis de 6 horas e suporte pelo WhatsApp.
             </p>
             <a
               href={WHATSAPP_GENERIC}

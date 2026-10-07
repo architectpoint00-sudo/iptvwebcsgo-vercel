@@ -1,37 +1,37 @@
 # IPTV WebCSGO
 
-> Provedor de IPTV premium no Brasil com mais de 150.000 canais ao vivo em HD, Full HD e 4K, filmes e séries sob demanda, tecnologia anti-freeze e suporte 24/7 via WhatsApp.
+> Serviço de IPTV para o Brasil com canais ao vivo, filmes e séries sob demanda em HD, Full HD e 4K, teste grátis de 6 horas e suporte por WhatsApp. O site também publica guias de instalação e solução de problemas.
 
 ## Páginas Principais
 
-- [Página Inicial](https://iptvwebcsgo.com/): Visão geral do serviço, recursos e planos.
+- [Página Inicial](https://iptvwebcsgo.com/): Visão geral do serviço, planos e como começar.
 - [Preços](https://iptvwebcsgo.com/precos/): Planos de 1, 3, 6 e 12 meses com preços a partir de R$10/mês.
-- [Canais](https://iptvwebcsgo.com/canais/): Lista completa de categorias e canais disponíveis.
+- [Canais](https://iptvwebcsgo.com/canais/): Categorias de canais e conteúdos.
 - [Teste Grátis](https://iptvwebcsgo.com/teste-gratis/): Teste gratuito de 6 horas sem compromisso.
 - [FAQ](https://iptvwebcsgo.com/faq/): Perguntas frequentes sobre o serviço.
 - [Guia de Instalação](https://iptvwebcsgo.com/guia-de-instalacao/): Tutoriais para Smart TV, Fire Stick, Android, iOS e PC.
-- [Contato](https://iptvwebcsgo.com/contato/): Suporte 24/7 via WhatsApp e e-mail.
-- [Sobre Nós](https://iptvwebcsgo.com/sobre/): Informações sobre a empresa.
+- [Contato](https://iptvwebcsgo.com/contato/): Suporte via WhatsApp e e-mail.
+- [Sobre Nós](https://iptvwebcsgo.com/sobre/): Como o serviço funciona.
 - [Programa de Revendedor](https://iptvwebcsgo.com/programa-de-revendedor/): Informações para revendedores.
 
 ## Blog
 
-- [Melhores Listas IPTV Brasil 2026](https://iptvwebcsgo.com/blog/melhores-listas-iptv-brasil-2026/): Guia com 10 critérios e um checklist para avaliar um provedor IPTV antes de assinar.
-- [Como Resolver Buffering no IPTV](https://iptvwebcsgo.com/blog/como-resolver-buffering-iptv/): 12 soluções testadas para eliminar travamentos.
-- [Como Instalar IPTV no Fire Stick](https://iptvwebcsgo.com/blog/como-instalar-iptv-fire-stick-2026/): Guia passo a passo com 3 apps testados.
-- [Configurar IPTV no Android e iOS](https://iptvwebcsgo.com/blog/configurar-iptv-android-ios-2026/): Tutorial completo para celular e tablet.
-- [Guia de Canais IPTV em HD e 4K](https://iptvwebcsgo.com/blog/guia-canais-iptv-hd-4k/): Lista atualizada por categoria e resolução.
-- [IPTV para Futebol ao Vivo](https://iptvwebcsgo.com/blog/iptv-futebol-ao-vivo/): Brasileirão, Libertadores e Champions League.
-- [IPTV vs TV a Cabo vs Streaming](https://iptvwebcsgo.com/blog/iptv-vs-tv-a-cabo-streaming-2026/): Comparação completa de custo e recursos.
-- [Melhor IPTV para Smart TV Samsung e LG](https://iptvwebcsgo.com/blog/melhor-iptv-smart-tv-samsung-lg/): Configuração completa para Tizen e webOS.
+- [Como escolher um provedor IPTV](https://iptvwebcsgo.com/blog/melhores-listas-iptv-brasil-2026/): 10 critérios e um checklist para avaliar um provedor antes de assinar.
+- [IPTV travando: como resolver buffering](https://iptvwebcsgo.com/blog/como-resolver-buffering-iptv/): diagnóstico por sintoma, da rede ao servidor.
+- [Como instalar IPTV no Fire Stick](https://iptvwebcsgo.com/blog/como-instalar-iptv-fire-stick-2026/): passo a passo com Downloader e login Xtream Codes.
+- [Configurar IPTV no Android e iOS](https://iptvwebcsgo.com/blog/configurar-iptv-android-ios-2026/): configuração no celular e no tablet.
+- [Canais IPTV em HD e 4K](https://iptvwebcsgo.com/blog/guia-canais-iptv-hd-4k/): como conferir a qualidade real de um canal.
+- [IPTV para futebol ao vivo](https://iptvwebcsgo.com/blog/iptv-futebol-ao-vivo/): como se preparar para o dia de jogo.
+- [IPTV vs TV a cabo vs streaming](https://iptvwebcsgo.com/blog/iptv-vs-tv-a-cabo-streaming-2026/): critérios e planilha de custo.
+- [IPTV na Smart TV Samsung e LG](https://iptvwebcsgo.com/blog/melhor-iptv-smart-tv-samsung-lg/): configuração para Tizen e webOS.
 
 ## Informações do Serviço
 
 - Planos: 1 mês (R$22,50), 3 meses (R$52,50), 6 meses (R$75,00), 12 meses (R$120,00)
 - Teste grátis: 6 horas sem compromisso
-- Canais: mais de 150.000 ao vivo
+- Conteúdo: canais ao vivo e VOD (filmes e séries)
 - Qualidade: HD, Full HD e 4K Ultra HD
 - Dispositivos: Smart TV, Fire Stick, Android, iOS, PC, MAG Box
-- Suporte: 24/7 via WhatsApp
+- Suporte: via WhatsApp e e-mail
 - Pagamento: PIX, cartão de crédito, boleto bancário
 - Garantia: 7 dias de devolução

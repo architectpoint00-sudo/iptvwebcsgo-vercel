@@ -1,12 +1,13 @@
+import Link from 'next/link'
 import { buildMetadata } from '@/lib/seo'
 import { INSTALL_GUIDES } from '@/lib/data'
 import Breadcrumb from '@/components/Breadcrumb'
 import CtaSection from '@/components/CtaSection'
 
 export const metadata = buildMetadata({
-  title: 'Guia de Instalação - IPTV WEBCSGO',
+  title: 'Guia de Instalação IPTV: Smart TV, Fire Stick, Celular e PC',
   description:
-    'Configurar IPTV é simples e rápido. Veja o passo a passo completo de instalação para Smart TV, Android, Fire Stick, celular, computador e MAG Box.',
+    'Passo a passo para instalar IPTV na Smart TV, Fire Stick, Android TV, celular, computador e MAG Box, com links para guias detalhados por aparelho.',
   path: '/guia-de-instalacao/',
 })
 
@@ -23,9 +24,16 @@ export default function GuiaDeInstalacaoPage() {
             Guia de Instalação
           </h1>
           <p className="mt-5 text-base leading-relaxed text-gray-300 sm:text-lg">
-            Configurar a sua IPTV é simples e rápido. Escolha o seu dispositivo abaixo
-            e siga o passo a passo. Se precisar de ajuda, nossa equipe de suporte está
-            disponível 24 horas por dia pelo WhatsApp.
+            Escolha o seu dispositivo abaixo e siga o passo a passo. Se precisar de
+            ajuda, fale com a nossa equipe pelo WhatsApp. Para guias mais detalhados,
+            veja também as instruções para o{' '}
+            <Link href="/blog/como-instalar-iptv-fire-stick-2026/" className="text-blue-400 hover:text-blue-300">Fire Stick</Link>,
+            para <Link href="/blog/melhor-iptv-smart-tv-samsung-lg/" className="text-blue-400 hover:text-blue-300">Smart TV Samsung e LG</Link>{' '}
+            e para <Link href="/blog/configurar-iptv-android-ios-2026/" className="text-blue-400 hover:text-blue-300">Android e iOS</Link>.
+            Se a imagem travar, consulte como{' '}
+            <Link href="/blog/como-resolver-buffering-iptv/" className="text-blue-400 hover:text-blue-300">resolver buffering</Link>.
+            Ainda sem acesso? Peça o{' '}
+            <Link href="/teste-gratis/" className="text-blue-400 hover:text-blue-300">teste grátis de 6 horas</Link>.
           </p>
         </div>
       </section>
@@ -83,7 +91,7 @@ export default function GuiaDeInstalacaoPage() {
 
       <CtaSection
         title="Fale com o Suporte Técnico"
-        subtitle="Estamos disponíveis 24 horas por dia, 7 dias por semana, para te ajudar com a instalação."
+        subtitle="Chame a equipe pelo WhatsApp e informe o seu aparelho para receber ajuda com a instalação."
         buttonLabel="Preciso de Ajuda"
         message="Olá! Estou tentando instalar a IPTV WebCSGO e preciso de ajuda."
       />

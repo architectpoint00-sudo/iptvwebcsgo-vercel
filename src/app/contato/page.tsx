@@ -6,9 +6,9 @@ import FaqAccordion from '@/components/FaqAccordion'
 import CtaSection from '@/components/CtaSection'
 
 export const metadata = buildMetadata({
-  title: 'Contato IPTV WebCSGO | Suporte 24h via WhatsApp',
+  title: 'Contato IPTV WebCSGO | Suporte via WhatsApp e E-mail',
   description:
-    'Entre em contato com a equipe IPTV WebCSGO pelo WhatsApp ou e-mail. Suporte disponível 24 horas por dia, 7 dias por semana.',
+    'Fale com a equipe IPTV WebCSGO pelo WhatsApp ou pelo e-mail suporte@iptvwebcsgo.com para tirar dúvidas, pedir teste grátis ou ajuda com a instalação.',
   path: '/contato/',
 })
 
@@ -40,8 +40,8 @@ export default function ContatoPage() {
               {WHATSAPP_DISPLAY}
             </p>
             <p className="mt-2 text-sm leading-relaxed text-gray-400">
-              Atendimento 24 horas por dia, 7 dias por semana. Nossa forma de contato
-              mais rápida.
+              Canal principal de atendimento para dúvidas, teste grátis, compra e
+              instalação.
             </p>
             <a
               href={WHATSAPP_GENERIC}
@@ -58,8 +58,7 @@ export default function ContatoPage() {
             <h2 className="mt-4 text-xl font-bold text-white">E-mail</h2>
             <p className="mt-2 text-lg font-semibold text-blue-400">{SUPPORT_EMAIL}</p>
             <p className="mt-2 text-sm leading-relaxed text-gray-400">
-              Envie sua dúvida por e-mail e nossa equipe responderá o mais rápido
-              possível.
+              Envie sua dúvida por e-mail e nossa equipe responderá assim que possível.
             </p>
             <a
               href={`mailto:${SUPPORT_EMAIL}`}
@@ -74,9 +73,9 @@ export default function ContatoPage() {
         <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3">
           <div className="rounded-2xl border border-white/10 bg-[#111827] p-6 text-center sm:col-span-1">
             <span className="text-3xl">🕒</span>
-            <h3 className="mt-3 text-base font-bold text-white">Horário de Atendimento</h3>
+            <h3 className="mt-3 text-base font-bold text-white">Como Falar com a Equipe</h3>
             <p className="mt-2 text-sm text-gray-400">
-              24 horas por dia, 7 dias por semana, incluindo feriados.
+              Envie uma mensagem com o seu aparelho e o problema, para agilizar o atendimento.
             </p>
           </div>
           {RESPONSE_TIMES.map((item) => (
@@ -86,7 +85,7 @@ export default function ContatoPage() {
             >
               <span className="text-3xl">⚡</span>
               <h3 className="mt-3 text-base font-bold text-white">
-                Tempo de Resposta — {item.channel}
+                Atendimento — {item.channel}
               </h3>
               <p className="mt-2 text-sm text-gray-400">{item.time}</p>
             </div>
@@ -110,7 +109,7 @@ export default function ContatoPage() {
 
       <CtaSection
         title="Ainda Tem Dúvidas?"
-        subtitle="Fale agora mesmo com a nossa equipe pelo WhatsApp e receba uma resposta em minutos."
+        subtitle="Fale agora mesmo com a nossa equipe pelo WhatsApp e tire a sua dúvida."
         buttonLabel="Falar no WhatsApp"
         message="Olá! Estou na página de contato do site e gostaria de tirar uma dúvida."
       />

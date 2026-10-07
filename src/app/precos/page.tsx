@@ -16,25 +16,25 @@ const PAYMENT_METHODS = [
   {
     icon: '⚡',
     title: 'PIX',
-    description: 'Aprovação instantânea, 24 horas por dia, todos os dias da semana.',
+    description: 'Pagamento por PIX, com confirmação em geral rápida. O acesso é enviado pelo WhatsApp após a confirmação.',
   },
   {
     icon: '💳',
     title: 'Cartão de Crédito',
-    description: 'Aceitamos Visa, Mastercard, Elo e American Express, com opção de parcelamento.',
+    description: 'Pagamento com cartão de crédito. Pergunte à equipe sobre as bandeiras aceitas antes de pagar.',
   },
   {
     icon: '🧾',
     title: 'Boleto Bancário',
-    description: 'Confirmação em até 1-2 dias úteis após o pagamento.',
+    description: 'Pagamento por boleto bancário. A compensação costuma levar alguns dias úteis, e o acesso é liberado depois dela.',
   },
 ]
 
 const productSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
-  "name": "WebCSGO IPTV - Assinatura Premium",
-  "description": "Serviço de IPTV premium com +150.000 canais em HD, Full HD e 4K. Tecnologia anti-freeze, suporte 24/7.",
+  "name": "WebCSGO IPTV - Assinatura",
+  "description": "Assinatura de IPTV com canais ao vivo, filmes e séries sob demanda em HD, Full HD e 4K, nos planos de 1, 3, 6 e 12 meses.",
   "brand": { "@type": "Brand", "name": "WebCSGO IPTV" },
   "image": `${SITE_URL}/og-image-webcsgo.png`,
   "offers": {
@@ -62,9 +62,9 @@ export default function PrecosPage() {
             Planos e Preços
           </h1>
           <p className="mt-5 text-base leading-relaxed text-gray-300 sm:text-lg">
-            Escolha o plano ideal para você. Todos incluem o catálogo completo de mais
-            de 150.000 canais, qualidade 4K e suporte 24/7, com garantia de devolução
-            em 7 dias.
+            Escolha o plano de 1, 3, 6 ou 12 meses. Todos dão acesso ao mesmo catálogo
+            de canais e VOD, com suporte pelo WhatsApp e garantia de devolução em 7
+            dias. Quer conferir antes? Peça o teste grátis de 6 horas.
           </p>
         </div>
       </section>
@@ -119,31 +119,23 @@ export default function PrecosPage() {
                   ))}
                 </tr>
                 <tr className="bg-[#0b0b12]">
-                  <td className="px-5 py-4 text-gray-400">Canais inclusos</td>
+                  <td className="px-5 py-4 text-gray-400">Catálogo de canais e VOD</td>
                   {PRICING_PLANS.map((plan) => (
                     <td key={plan.id} className="px-5 py-4 text-center text-gray-200">
-                      +150.000
+                      Completo
                     </td>
                   ))}
                 </tr>
                 <tr className="bg-[#111827]">
-                  <td className="px-5 py-4 text-gray-400">Qualidade máxima</td>
+                  <td className="px-5 py-4 text-gray-400">Resolução disponível</td>
                   {PRICING_PLANS.map((plan) => (
                     <td key={plan.id} className="px-5 py-4 text-center text-gray-200">
-                      4K Ultra HD
-                    </td>
-                  ))}
-                </tr>
-                <tr className="bg-[#0b0b12]">
-                  <td className="px-5 py-4 text-gray-400">Tecnologia Anti-Freeze</td>
-                  {PRICING_PLANS.map((plan) => (
-                    <td key={plan.id} className="px-5 py-4 text-center text-green-400">
-                      ✓
+                      HD a 4K
                     </td>
                   ))}
                 </tr>
                 <tr className="bg-[#111827]">
-                  <td className="px-5 py-4 text-gray-400">Suporte 24/7</td>
+                  <td className="px-5 py-4 text-gray-400">Suporte via WhatsApp</td>
                   {PRICING_PLANS.map((plan) => (
                     <td key={plan.id} className="px-5 py-4 text-center text-green-400">
                       ✓

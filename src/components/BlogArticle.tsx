@@ -3,25 +3,33 @@ import Breadcrumb from '@/components/Breadcrumb'
 import { WHATSAPP_TRIAL, SITE_URL, SITE_NAME } from '@/lib/constants'
 import { BLOG_POSTS } from '@/lib/data'
 import type { BlogPost } from '@/lib/data'
+import { brDateToISO } from '@/lib/dates'
 
-function isHeading(text: string) {
-  return text.length < 80 && !/[.!:;]$/.test(text.trim())
+type Block =
+  | { kind: 'h2'; text: string }
+  | { kind: 'h3'; text: string }
+  | { kind: 'p'; text: string }
+
+/** "## " = H2, "### " = H3, anything else = paragraph. */
+function parseBlock(raw: string): Block {
+  if (raw.startsWith('### ')) return { kind: 'h3', text: raw.slice(4).trim() }
+  if (raw.startsWith('## ')) return { kind: 'h2', text: raw.slice(3).trim() }
+  return { kind: 'p', text: raw }
 }
 
-/** Convert Brazilian date string to ISO format for schema */
-function toISODate(dateStr: string): string {
-  const months: Record<string, string> = {
-    'Janeiro': '01', 'Fevereiro': '02', 'Março': '03', 'Marco': '03',
-    'Abril': '04', 'Maio': '05', 'Junho': '06',
-    'Julho': '07', 'Agosto': '08', 'Setembro': '09',
-    'Outubro': '10', 'Novembro': '11', 'Dezembro': '12',
-  }
-  const match = dateStr.match(/(\d+)\s+de\s+(\w+)\s+de\s+(\d+)/)
-  if (!match) return '2026-01-01'
-  const [, day, monthName, year] = match
-  const month = months[monthName] || '01'
-  return `${year}-${month}-${day.padStart(2, '0')}`
+/** FAQ pairs = every H3 question followed by its answer paragraph. */
+function extractFaq(blocks: Block[]): { question: string; answer: string }[] {
+  const out: { question: string; answer: string }[] = []
+  blocks.forEach((b, i) => {
+    const next = blocks[i + 1]
+    if (b.kind === 'h3' && b.text.endsWith('?') && next && next.kind === 'p') {
+      out.push({ question: b.text, answer: stripLinks(next.text) })
+    }
+  })
+  return out
 }
+
+const toISODate = brDateToISO
 
 function getRelatedPosts(post: BlogPost): BlogPost[] {
   const chosen = (post.related ?? [])
@@ -68,13 +76,14 @@ function renderRichText(text: string) {
 
 function buildBlogPostingSchema(post: BlogPost) {
   const isoDate = toISODate(post.date)
+  const modified = post.modified ?? isoDate
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": post.title,
     "description": post.excerpt,
     "datePublished": isoDate,
-    "dateModified": isoDate,
+    "dateModified": modified,
     "author": {
       "@type": "Organization",
       "name": SITE_NAME,
@@ -90,13 +99,26 @@ function buildBlogPostingSchema(post: BlogPost) {
       "@id": `${SITE_URL}/blog/${post.slug}/`,
     },
     "image": `${SITE_URL}/og-image-webcsgo.png`,
-    "wordCount": stripLinks(post.content.join(' ')).split(/\s+/).length,
+    "wordCount": stripLinks(post.content.map((c) => c.replace(/^#+ /, '')).join(' ')).split(/\s+/).length,
     "inLanguage": "pt-BR",
   }
 }
 
 export default function BlogArticle({ post }: { post: BlogPost }) {
   const relatedPosts = getRelatedPosts(post)
+  const blocks = post.content.map(parseBlock)
+  const faq = extractFaq(blocks)
+  const faqSchema = faq.length
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faq.map((f) => ({
+          '@type': 'Question',
+          name: f.question,
+          acceptedAnswer: { '@type': 'Answer', text: f.answer },
+        })),
+      }
+    : null
 
   return (
     <div className="mx-auto max-w-3xl px-4 pb-20 pt-12 sm:px-6 lg:px-8">
@@ -104,6 +126,13 @@ export default function BlogArticle({ post }: { post: BlogPost }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBlogPostingSchema(post)) }}
       />
+
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
 
       <Breadcrumb
         items={[
@@ -132,14 +161,18 @@ export default function BlogArticle({ post }: { post: BlogPost }) {
         </header>
 
         <div className="mt-10 space-y-5 border-t border-white/10 pt-10">
-          {post.content.map((block, i) =>
-            isHeading(block) ? (
+          {blocks.map((block, i) =>
+            block.kind === 'h2' ? (
               <h2 key={i} className="pt-5 text-xl font-bold text-white sm:text-2xl">
-                {block}
+                {block.text}
               </h2>
+            ) : block.kind === 'h3' ? (
+              <h3 key={i} className="pt-2 text-lg font-semibold text-white">
+                {block.text}
+              </h3>
             ) : (
               <p key={i} className="text-sm leading-relaxed text-gray-400 sm:text-base">
-                {renderRichText(block)}
+                {renderRichText(block.text)}
               </p>
             )
           )}
@@ -154,7 +187,7 @@ export default function BlogArticle({ post }: { post: BlogPost }) {
         <div className="relative">
           <h2 className="text-xl font-bold text-white sm:text-2xl">Teste Grátis IPTV WebCSGO</h2>
           <p className="mx-auto mt-4 max-w-lg text-sm text-gray-400">
-            Experimente 6 horas grátis com acesso a 150.000+ canais em HD e 4K.
+            Peça 6 horas grátis pelo WhatsApp e confira o serviço na sua TV, com a sua internet.
           </p>
           <a
             href={WHATSAPP_TRIAL}
@@ -177,7 +210,10 @@ export default function BlogArticle({ post }: { post: BlogPost }) {
             Teste Grátis de 6 Horas
           </Link>
           <Link href="/canais/" className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-gray-300 transition hover:border-purple-500/30 hover:text-white">
-            Lista de 150.000+ Canais
+            Categorias de Canais
+          </Link>
+          <Link href="/guia-de-instalacao/" className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-gray-300 transition hover:border-purple-500/30 hover:text-white">
+            Guia de Instalação por Aparelho
           </Link>
           <Link href="/faq/" className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-gray-300 transition hover:border-purple-500/30 hover:text-white">
             Perguntas Frequentes

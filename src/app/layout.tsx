@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { SITE_NAME, SITE_URL } from "@/lib/constants";
+import { SITE_NAME, SITE_URL, SUPPORT_EMAIL } from "@/lib/constants";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -24,31 +24,19 @@ export const metadata: Metadata = {
     google: "TN4bplf7oXkIk1h9SGezxu4XJ6c-y2tNOjSPXutGAiI",
   },
   title: {
-    default: "IPTV Brasil | +150.000 Canais HD, Full HD e 4K | WebCSGO IPTV",
+    default: "IPTV Brasil: Teste Grátis de 6 Horas e Planos | WebCSGO IPTV",
     template: `%s | ${SITE_NAME}`,
   },
   description:
-    "Melhor IPTV do Brasil com +150.000 canais ao vivo, filmes e séries. Qualidade 4K, sem travamentos. Teste grátis de 6 horas. Planos a partir de R$10/mês.",
+    "IPTV com canais ao vivo, filmes e séries em HD e 4K. Peça o teste grátis de 6 horas e veja os planos a partir de R$10/mês, com guias de instalação.",
   applicationName: SITE_NAME,
-  keywords: [
-    "IPTV Brasil",
-    "IPTV",
-    "canais ao vivo",
-    "filmes online",
-    "séries online",
-    "TV por internet",
-    "IPTV 4K",
-    "melhor IPTV",
-    "lista IPTV",
-    "WebCSGO IPTV",
-  ],
   openGraph: {
     type: "website",
     locale: "pt_BR",
     url: SITE_URL,
-    title: "IPTV Brasil | +150.000 Canais HD, Full HD e 4K | WebCSGO IPTV",
+    title: "IPTV Brasil: Teste Grátis de 6 Horas e Planos | WebCSGO IPTV",
     description:
-      "Melhor IPTV do Brasil com +150.000 canais ao vivo, filmes e séries. Qualidade 4K, sem travamentos. Teste grátis de 6 horas.",
+      "IPTV com canais ao vivo, filmes e séries em HD e 4K. Peça o teste grátis de 6 horas e veja os planos a partir de R$10/mês.",
     images: [
       {
         url: "/og-image-webcsgo.png",
@@ -60,9 +48,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "IPTV Brasil | +150.000 Canais HD, Full HD e 4K | WebCSGO IPTV",
+    title: "IPTV Brasil: Teste Grátis de 6 Horas e Planos | WebCSGO IPTV",
     description:
-      "Melhor IPTV do Brasil com +150.000 canais ao vivo, filmes e séries. Qualidade 4K, sem travamentos. Teste grátis de 6 horas.",
+      "IPTV com canais ao vivo, filmes e séries em HD e 4K. Peça o teste grátis de 6 horas e veja os planos a partir de R$10/mês.",
     images: ["/og-image-webcsgo.png"],
   },
   robots: {
@@ -91,8 +79,21 @@ export default function RootLayout({ children }: LayoutProps) {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",
           "@graph": [
-            { "@type": "Organization", "name": SITE_NAME, "url": SITE_URL, "description": "Melhor IPTV do Brasil com +150.000 canais em 4K." },
-            { "@type": "WebSite", "name": SITE_NAME, "url": SITE_URL }
+            {
+              "@type": "Organization",
+              "@id": `${SITE_URL}/#organization`,
+              "name": SITE_NAME,
+              "url": SITE_URL,
+              "description": "Serviço de IPTV para o Brasil com canais ao vivo, filmes e séries sob demanda, teste grátis de 6 horas e suporte por WhatsApp.",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "customer support",
+                "email": SUPPORT_EMAIL,
+                "telephone": "+17185864134",
+                "availableLanguage": "pt-BR"
+              }
+            },
+            { "@type": "WebSite", "@id": `${SITE_URL}/#website`, "name": SITE_NAME, "url": SITE_URL, "inLanguage": "pt-BR", "publisher": { "@id": `${SITE_URL}/#organization` } }
           ]
         })}} />
       </head>

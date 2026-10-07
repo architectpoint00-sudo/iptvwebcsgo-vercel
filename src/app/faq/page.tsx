@@ -7,7 +7,7 @@ import CtaSection from '@/components/CtaSection'
 export const metadata = buildMetadata({
   title: 'Perguntas Frequentes (FAQ) | IPTV WebCSGO',
   description:
-    'Tire suas dúvidas sobre a IPTV WebCSGO: o que é IPTV, dispositivos compatíveis, teste grátis, instalação, estabilidade, formas de pagamento e suporte.',
+    'Tire suas dúvidas sobre a IPTV WebCSGO: o que é IPTV, dispositivos compatíveis, teste grátis, instalação, reembolso, formas de pagamento e suporte.',
   path: '/faq/',
 })
 
@@ -52,7 +52,7 @@ export default function FaqPage() {
 
       <CtaSection
         title="Ainda Tem Dúvidas?"
-        subtitle="Nossa equipe está pronta para te ajudar 24 horas por dia, 7 dias por semana."
+        subtitle="Fale com a nossa equipe pelo WhatsApp e tire a sua dúvida antes de assinar."
         buttonLabel="Falar no WhatsApp"
         message="Olá! Vi o FAQ no site, mas ainda tenho uma dúvida."
       />

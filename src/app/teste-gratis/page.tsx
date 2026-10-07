@@ -5,9 +5,9 @@ import Breadcrumb from '@/components/Breadcrumb'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export const metadata = buildMetadata({
-  title: 'Teste Grátis - IPTV WEBCSGO',
+  title: 'Teste IPTV Grátis por 6 Horas: Como Pedir | WebCSGO',
   description:
-    'Sabemos que escolher um serviço de IPTV é uma decisão importante. Por isso, oferecemos um teste grátis de 6 horas para você testar a qualidade dos nossos canais antes de assinar um plano.',
+    'Peça um teste IPTV grátis de 6 horas pelo WhatsApp, sem cartão de crédito, e confira o serviço na sua TV e na sua internet antes de assinar.',
   path: '/teste-gratis/',
 })
 

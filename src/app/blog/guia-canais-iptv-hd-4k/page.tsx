@@ -1,8 +1,8 @@
 import { buildMetadata } from '@/lib/seo'
-import { BLOG_POSTS } from '@/lib/data'
+import { getPost } from '@/lib/data'
 import BlogArticle from '@/components/BlogArticle'
 
-const post = BLOG_POSTS[4]
+const post = getPost('guia-canais-iptv-hd-4k')
 
 export const metadata = buildMetadata({
   title: post.title,
