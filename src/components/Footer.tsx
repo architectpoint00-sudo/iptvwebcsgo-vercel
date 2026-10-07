@@ -36,7 +36,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-gray-400">
-              O provedor de IPTV mais confiável do Brasil, com mais de 150.000 canais,
+              Provedor de IPTV para o Brasil, com mais de 150.000 canais,
               qualidade 4K e suporte 24 horas por dia via WhatsApp.
             </p>
             <a

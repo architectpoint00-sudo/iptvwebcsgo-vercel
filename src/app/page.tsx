@@ -261,7 +261,7 @@ export default function HomePage() {
       <div className="pt-20">
         <CtaSection
           title="Comece Agora"
-          subtitle="Junte-se a milhares de clientes satisfeitos e comece a assistir seus canais favoritos hoje mesmo."
+          subtitle="Peça seu teste grátis de 6 horas e comece a assistir seus canais favoritos hoje mesmo."
           buttonLabel="Falar no WhatsApp"
           message="Olá! Quero começar a assistir agora mesmo. Pode me ajudar a escolher um plano?"
         />

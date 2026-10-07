@@ -1,5 +1,15 @@
 import Link from 'next/link'
-import { WHATSAPP_SUPPORT } from '@/lib/constants'
+import type { Metadata } from 'next'
+import { WHATSAPP_SUPPORT, SITE_NAME } from '@/lib/constants'
+
+export const metadata: Metadata = {
+  title: { absolute: `Página não encontrada (404) | ${SITE_NAME}` },
+  description: 'A página que você procura não foi encontrada.',
+  robots: { index: false, follow: false },
+  alternates: { canonical: null },
+  openGraph: { title: `Página não encontrada (404) | ${SITE_NAME}`, url: null },
+  twitter: { title: `Página não encontrada (404) | ${SITE_NAME}` },
+}
 
 export default function NotFound() {
   return (

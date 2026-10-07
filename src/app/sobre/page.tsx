@@ -5,9 +5,9 @@ import StatsBar from '@/components/StatsBar'
 import CtaSection from '@/components/CtaSection'
 
 export const metadata = buildMetadata({
-  title: 'Sobre a IPTV WebCSGO | Melhor Provedor IPTV do Brasil',
+  title: 'Sobre a IPTV WebCSGO | Provedor de IPTV no Brasil',
   description:
-    'Conheça a IPTV WebCSGO, provedor líder de IPTV no Brasil. Nossa história, missão e os valores que fazem de nós a escolha de mais de 50.000 clientes.',
+    'Conheça a IPTV WebCSGO, provedor de IPTV para o Brasil. Nossa história, missão e os valores que guiam o nosso atendimento.',
   path: '/sobre/',
 })
 
@@ -22,8 +22,7 @@ export default function SobrePage() {
             Sobre a IPTV WebCSGO
           </h1>
           <p className="mt-5 text-base leading-relaxed text-gray-300 sm:text-lg">
-            Conheça a história, a missão e os valores por trás do provedor de IPTV mais
-            confiável do Brasil.
+            Conheça a história, a missão e os valores por trás da IPTV WebCSGO.
           </p>
         </div>
       </section>
@@ -45,9 +44,8 @@ export default function SobrePage() {
             <p>
               Ao longo dos anos, investimos continuamente em infraestrutura de
               servidores, tecnologia anti-freeze e um catálogo cada vez maior de canais
-              e conteúdos sob demanda. Hoje, somos um dos provedores de IPTV mais
-              confiáveis do Brasil, atendendo milhares de clientes em todo o país e no
-              exterior, com um time de suporte disponível 24 horas por dia.
+              e conteúdos sob demanda. Hoje atendemos clientes em todo o Brasil, com um
+              time de suporte disponível 24 horas por dia pelo WhatsApp.
             </p>
           </div>
 
@@ -112,8 +110,8 @@ export default function SobrePage() {
       </section>
 
       <CtaSection
-        title="Faça Parte da Nossa Família de Clientes"
-        subtitle="Junte-se a mais de 50.000 clientes satisfeitos e descubra por que somos referência em IPTV no Brasil."
+        title="Experimente Antes de Assinar"
+        subtitle="Peça um teste grátis de 6 horas, confira a qualidade na sua própria TV e só então escolha um plano."
         buttonLabel="Falar no WhatsApp"
         message="Olá! Conheci a história da IPTV WebCSGO no site e gostaria de saber mais sobre os planos."
       />

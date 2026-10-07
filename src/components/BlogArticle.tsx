@@ -23,8 +23,47 @@ function toISODate(dateStr: string): string {
   return `${year}-${month}-${day.padStart(2, '0')}`
 }
 
-function getRelatedPosts(currentSlug: string): BlogPost[] {
-  return BLOG_POSTS.filter((p) => p.slug !== currentSlug).slice(0, 3)
+function getRelatedPosts(post: BlogPost): BlogPost[] {
+  const chosen = (post.related ?? [])
+    .map((slug) => BLOG_POSTS.find((p) => p.slug === slug))
+    .filter((p): p is BlogPost => Boolean(p) && p!.slug !== post.slug)
+  if (chosen.length > 0) return chosen.slice(0, 3)
+  return BLOG_POSTS.filter((p) => p.slug !== post.slug).slice(0, 3)
+}
+
+const LINK_PATTERN = /\[([^\]]+)\]\(([^)\s]+)\)/g
+
+/** Remove [text](url) markup, keeping the text (used for word counts). */
+function stripLinks(text: string): string {
+  return text.replace(LINK_PATTERN, '$1')
+}
+
+const LINK_CLASS = 'text-purple-400 underline underline-offset-2 transition-colors hover:text-purple-300'
+
+/** Render a paragraph, turning [text](url) markup into real links. */
+function renderRichText(text: string) {
+  const nodes: React.ReactNode[] = []
+  let last = 0
+  let n = 0
+  for (const m of text.matchAll(LINK_PATTERN)) {
+    const start = m.index ?? 0
+    if (start > last) nodes.push(text.slice(last, start))
+    const [, label, href] = m
+    nodes.push(
+      href.startsWith('/') ? (
+        <Link key={n++} href={href} className={LINK_CLASS}>
+          {label}
+        </Link>
+      ) : (
+        <a key={n++} href={href} target="_blank" rel="noopener noreferrer" className={LINK_CLASS}>
+          {label}
+        </a>
+      )
+    )
+    last = start + m[0].length
+  }
+  if (last < text.length) nodes.push(text.slice(last))
+  return nodes
 }
 
 function buildBlogPostingSchema(post: BlogPost) {
@@ -51,13 +90,13 @@ function buildBlogPostingSchema(post: BlogPost) {
       "@id": `${SITE_URL}/blog/${post.slug}/`,
     },
     "image": `${SITE_URL}/og-image-webcsgo.png`,
-    "wordCount": post.content.join(' ').split(/\s+/).length,
+    "wordCount": stripLinks(post.content.join(' ')).split(/\s+/).length,
     "inLanguage": "pt-BR",
   }
 }
 
 export default function BlogArticle({ post }: { post: BlogPost }) {
-  const relatedPosts = getRelatedPosts(post.slug)
+  const relatedPosts = getRelatedPosts(post)
 
   return (
     <div className="mx-auto max-w-3xl px-4 pb-20 pt-12 sm:px-6 lg:px-8">
@@ -100,7 +139,7 @@ export default function BlogArticle({ post }: { post: BlogPost }) {
               </h2>
             ) : (
               <p key={i} className="text-sm leading-relaxed text-gray-400 sm:text-base">
-                {block}
+                {renderRichText(block)}
               </p>
             )
           )}
